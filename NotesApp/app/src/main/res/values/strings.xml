@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">NotesApp</string>
+    <string name="log_in">Log in</string>
+    <string name="log_sign">Sign in</string>
+    <string name="password">Password</string>
+    <string name="task">Task</string>
+    <string name="home">Home</string>
+    <string name="cat">Categories</string>
+    <string name="profile">Profile</string>
+    <string name="log_out">Log out</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+</resources>

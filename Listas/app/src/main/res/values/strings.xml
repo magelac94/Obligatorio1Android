@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">TodoList</string>
+
+    <string name="hello_blank_fragment">Todo task: </string>
+
+    <!--  To do  -->
+    <string name="title_activity_todo">Todo List App</string>
+
+    <!-- Add  -->
+    <string name="title_activity_add">Add Task</string>
+    <string name="add_fragment_add">Add</string>
+    <string name="add_fragment_hint">Task</string>
+    <string name="action_null">You don\'t have any TODOs yet. \nPress the + button to create your first one</string>
+    <string name="title_categories">Categories</string>
+    <string-array name="categories">
+        <item>Trabajo</item>
+        <item>Estudio</item>
+        <item>Compras</item>
+        <item>Ocio</item>
+    </string-array>
+    <string name="title_prioridad">Priority</string>
+    <string-array name="propiedades">
+        <item>High Priority</item>
+        <item>Medium Priority</item>
+        <item>Low Priority</item>
+    </string-array>
+</resources>
