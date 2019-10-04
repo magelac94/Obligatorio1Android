@@ -5,22 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.diegomedina.notesapp.R
 import com.diegomedina.notesapp.controller.AuthController
 import com.diegomedina.notesapp.view.home.HomeActivity
-import com.diegomedina.notesapp.view.home.principal.PrincipalFragment
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_sign.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.HttpException
 import kotlin.coroutines.CoroutineContext
 
-class LoginFragment : Fragment(), CoroutineScope {
+class SigninFragment : Fragment(), CoroutineScope {
     private val authController = AuthController()
 
     override val coroutineContext: CoroutineContext
@@ -30,40 +26,24 @@ class LoginFragment : Fragment(), CoroutineScope {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.fragment_login, container, false)
+    ) = inflater.inflate(R.layout.fragment_sign, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loginButton.setOnClickListener { login() }
-        signinButton.setOnClickListener { signin() }
+        signButton.setOnClickListener { signin() }
 
     }
+
 
     private fun signin() {
-        launch(Dispatchers.IO) {
-            try {
-                withContext(Dispatchers.Main) {
-                    activity?.let {
-                        it.startActivity(Intent(it, SigninFragment::class.java))
-                        it.finish()
-                    }
-                }
-            } catch (exception: Exception) {
-
-            }
-        }
-
-    }
-
-
-    private fun login() {
+        val name = nameEditText.editableText.toString()
         val email = emailEditText.editableText.toString()
         val password = passwordEditText.editableText.toString()
 
         launch(Dispatchers.IO) {
             try {
-                authController.login(email, password)
+//                authController.login(email, password)
                 withContext(Dispatchers.Main) {
                     activity?.let {
                         it.startActivity(Intent(it, HomeActivity::class.java))
@@ -75,9 +55,4 @@ class LoginFragment : Fragment(), CoroutineScope {
             }
         }
     }
-
 }
-
-
-
-

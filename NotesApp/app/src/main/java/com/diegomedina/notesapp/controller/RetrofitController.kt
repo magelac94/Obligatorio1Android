@@ -10,7 +10,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitController {
-    var accessToken: String? = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVzX29uIjoiMjAxOS0wOS0xOCAyMzoyMzozOCArMDAwMCIsImV4cCI6MTU2ODkzMTgxOX0.gLJ-nKSnCe8VnNAY82pKcxU8IXzkxAxYMOW1ty9RQSY"
+   // var accessToken: String? = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVzX29uIjoiMjAxOS0wOS0xOCAyMzoyMzozOCArMDAwMCIsImV4cCI6MTU2ODkzMTgxOX0.gLJ-nKSnCe8VnNAY82pKcxU8IXzkxAxYMOW1ty9RQSY"
+
+    var accessToken: String? = null
 
     val retrofit = Retrofit.Builder()
         .baseUrl("https://mighty-beyond-54626.herokuapp.com/")
