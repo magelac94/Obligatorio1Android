@@ -1,6 +1,7 @@
 package com.diegomedina.notesapp.service
 
 import com.diegomedina.notesapp.service.request.LoginRequest
+import com.diegomedina.notesapp.service.request.SigninRequest
 import com.diegomedina.notesapp.service.response.SuccessReponse
 import com.diegomedina.notesapp.service.response.TokenResponse
 import retrofit2.http.Body
@@ -13,4 +14,7 @@ interface AuthService {
 
     @POST("auth/logout")
     suspend fun logout(): SuccessReponse
+
+    @POST("auth/signup")
+    suspend fun sign(@Body signinRequest: SigninRequest): SuccessReponse
 }

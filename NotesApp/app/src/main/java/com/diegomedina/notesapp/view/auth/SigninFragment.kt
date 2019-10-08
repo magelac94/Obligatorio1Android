@@ -43,10 +43,10 @@ class SigninFragment : Fragment(), CoroutineScope {
 
         launch(Dispatchers.IO) {
             try {
-//                authController.login(email, password)
+                authController.signin(name, email, password)
                 withContext(Dispatchers.Main) {
                     activity?.let {
-                        it.startActivity(Intent(it, HomeActivity::class.java))
+                        it.startActivity(Intent(it, LoginFragment::class.java))
                         it.finish()
                     }
                 }

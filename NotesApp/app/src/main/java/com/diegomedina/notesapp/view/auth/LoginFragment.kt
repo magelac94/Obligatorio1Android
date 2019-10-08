@@ -19,6 +19,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import kotlin.coroutines.CoroutineContext
+import android.R.attr.fragment
+import androidx.core.view.isVisible
+import com.diegomedina.notesapp.helper.gone
+
 
 class LoginFragment : Fragment(), CoroutineScope {
     private val authController = AuthController()
@@ -41,19 +45,21 @@ class LoginFragment : Fragment(), CoroutineScope {
     }
 
     private fun signin() {
-        launch(Dispatchers.IO) {
-            try {
-                withContext(Dispatchers.Main) {
-                    activity?.let {
-                        it.startActivity(Intent(it, SigninFragment::class.java))
-                        it.finish()
-                    }
-                }
-            } catch (exception: Exception) {
+        //linear_login.setVisibility(View.INVISIBLE)  // chequear ya que el boton de atras no funciona y agregar un boton fisico para volver a atras
+        linear_login.gone()
+        showFragment(SigninFragment(), SigninFragmentTag)
 
-            }
-        }
 
+    }
+
+
+    private fun showFragment(fragment: Fragment, tag: String) {
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.add(R.id.container, fragment, tag)
+            ?.commit()
+
+        //activity.getfragfragment_login.setVisibility(View.GONE)
     }
 
 
@@ -74,6 +80,13 @@ class LoginFragment : Fragment(), CoroutineScope {
 
             }
         }
+    }
+
+
+
+    companion object {
+        private const val SigninFragmentTag = "SigninFragmentTag"
+
     }
 
 }
