@@ -1,13 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <TextView
-        android:id="@+id/id_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CATEGORIES" />
+
+
+   <RelativeLayout
+       android:id="@+id/linear1"
+       android:layout_width="wrap_content"
+       android:orientation="horizontal"
+       android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="20dp"
+            android:text="@string/c_work" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_alignParentRight="true"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_margin="20dp"
+            android:text="@string/c_study" />
+
+   </RelativeLayout>
+
+   <RelativeLayout
+       android:id="@+id/linear2"
+       android:layout_below="@+id/linear1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+        <Button
+            android:id="@+id/button3"
+            android:layout_alignParentLeft="true"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_margin="20dp"
+            android:text="@string/c_shopping" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_alignParentRight="true"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_margin="20dp"
+            android:text="@string/c_leisure" />
+   </RelativeLayout>
+
+   <RelativeLayout
+       android:id="@+id/linear3"
+       android:layout_below="@+id/linear2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_alignParentLeft="true"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_margin="20dp"
+            android:text="@string/c_finance" />
+
+       <Button
+           android:id="@+id/button6"
+           android:layout_alignParentRight="true"
+           android:layout_width="140dp"
+           android:layout_height="140dp"
+           android:layout_margin="20dp"
+           android:text="@string/c_home" />
+
+   </RelativeLayout>
+
 
 </LinearLayout>
 

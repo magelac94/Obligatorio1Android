@@ -28,6 +28,8 @@ class SigninFragment : Fragment(), CoroutineScope {
         savedInstanceState: Bundle?
     ) = inflater.inflate(R.layout.fragment_sign, container, false)
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

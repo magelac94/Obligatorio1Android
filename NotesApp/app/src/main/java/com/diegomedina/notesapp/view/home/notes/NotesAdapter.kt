@@ -12,7 +12,7 @@ import org.threeten.bp.format.DateTimeFormatter
 class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
     var notes = listOf<Note>()
         set(value) {
-            field = value.sortedByDescending { it.createdAt }
+            field = value.sortedByDescending { it.due_date }
             notifyDataSetChanged()
         }
 
@@ -36,10 +36,11 @@ class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(note: Note) {
-            itemView.contentTextView.text = note.content
-            itemView.dateTextView.text = DateTimeFormatter
-                .ofPattern("dd MMMM, yyyy")
-                .format(note.createdAt)
+            itemView.contentTextView.text = note.description
+            itemView.dateTextView.text = note.priority
+//            itemView.dateTextView.text = DateTimeFormatter
+//                .ofPattern("dd MMMM, yyyy")
+//                .format(note.due_date)
         }
     }
 }

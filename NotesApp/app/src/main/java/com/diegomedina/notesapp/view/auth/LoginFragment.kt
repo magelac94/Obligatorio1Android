@@ -45,11 +45,8 @@ class LoginFragment : Fragment(), CoroutineScope {
     }
 
     private fun signin() {
-        //linear_login.setVisibility(View.INVISIBLE)  // chequear ya que el boton de atras no funciona y agregar un boton fisico para volver a atras
         linear_login.gone()
         showFragment(SigninFragment(), SigninFragmentTag)
-
-
     }
 
 
@@ -58,8 +55,6 @@ class LoginFragment : Fragment(), CoroutineScope {
             ?.beginTransaction()
             ?.add(R.id.container, fragment, tag)
             ?.commit()
-
-        //activity.getfragfragment_login.setVisibility(View.GONE)
     }
 
 

@@ -20,7 +20,7 @@ class AuthController {
     }
 
     suspend fun signin(name: String, email: String, password: String) {
-        val request = SigninRequest(name, email, password)
+        val request = SigninRequest(name, email, password, password)
         authService.sign(request)
 
        //RetrofitController.accessToken = null

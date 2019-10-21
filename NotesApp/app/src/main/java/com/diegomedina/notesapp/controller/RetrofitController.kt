@@ -15,7 +15,7 @@ object RetrofitController {
     var accessToken: String? = null
 
     val retrofit = Retrofit.Builder()
-        .baseUrl("https://mighty-beyond-54626.herokuapp.com/")
+        .baseUrl("https://android-todos-api.herokuapp.com/")
         .addConverterFactory(gsonConverterFactory)
         .client(httpClient)
         .build()

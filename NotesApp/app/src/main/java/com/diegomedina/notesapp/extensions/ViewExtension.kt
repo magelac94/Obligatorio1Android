@@ -1,4 +1,4 @@
-package com.example.listas.extensions
+package com.diegomedina.notesapp.extensions
 
 import android.widget.EditText
 
