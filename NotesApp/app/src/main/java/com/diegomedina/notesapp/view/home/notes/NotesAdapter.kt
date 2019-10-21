@@ -36,8 +36,19 @@ class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(note: Note) {
+
             itemView.contentTextView.text = note.description
             itemView.dateTextView.text = note.priority
+            itemView.checkBox1.isChecked = note.completed
+
+            var color  = R.color.colorCompras
+            when(note.category_id){
+                1    ->  color = R.color.colorTrabajo
+                2    ->  color = R.color.colorEstudio
+                3    ->  color = R.color.colorCompras
+                4    ->  color = R.color.colorOcio
+            }
+            itemView.textViewColor.setBackgroundResource(color)
 //            itemView.dateTextView.text = DateTimeFormatter
 //                .ofPattern("dd MMMM, yyyy")
 //                .format(note.due_date)
